@@ -4,3 +4,5 @@ import read_file as rf
 resume_string = rf.read_txt_file('../examples/sample_resume_cc.txt')
 
 print(resume_string)
+
+#this is a new comment to test the new branch
