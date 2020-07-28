@@ -17,7 +17,7 @@ There is a folder called 'rough_work' that is in the .gitignore file.  Put all y
 * Try to follow the function docstring format as given in the example in code/read_file.py
 
 ## GitHub Quick Reference
-* Make sure you never dev on master!
+* Make sure you never develop on master!
 * cd into the rscanner root folder (where the README is)
 * **git status** : to see the status of the project
 * **git add .** : adds all files to the staging area
@@ -25,12 +25,7 @@ There is a folder called 'rough_work' that is in the .gitignore file.  Put all y
 * **git push origin branch_name** : pushes the branch
 * **git branch branch_name_another** : creates a branch called branch_name_another
 * **git checkout branch_name_another** : goes to the branch branch_name_another
-* **git push origin branch_name_another** : pushes changes to be reviewed
 * Note: before you create a branch, you want to pull the latest file changes from master. To do this, go back to the master branch via **git checkout master**.  Then **git pull origin master**
-
-
-
-
 
 ## Data
 
