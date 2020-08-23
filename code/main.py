@@ -2,7 +2,7 @@ import read_file as rf
 import clean_text as ct
 #from read_file import read_txt_file
 
-resume_string = rf.read_txt_file('../examples/sample_resume_cc.txt')
+resume_string = rf.check_file_ext('../examples/sample_resume_cc.txt')
 
 resume_cleaned = ct.FilePrep(resume_string)
 

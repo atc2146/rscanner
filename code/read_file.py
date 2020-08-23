@@ -101,7 +101,3 @@ def check_file_ext(path: str) -> str:
     return(data)
 
 
-test = check_file_ext('sample_resume.pdf')
-
-print(test)
-
