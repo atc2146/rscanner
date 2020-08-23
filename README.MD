@@ -32,5 +32,11 @@ There is a folder called 'rough_work' that is in the .gitignore file.  Put all y
 The sample_resume_cc.txt sample resume is taken from below:
 https://cultivatedculture.com/resume-scanner/
 
+The sample_resume.docx is taken from below:
+https://www.coolfreecv.com/
+
+The sample_resume.pdf is taken from below:
+https://docs.google.com/document/d/1-F9cFAubsoEzPzAL8gGKAPbrOj9EQl6yxOPbitoB7RE/edit
+
 ## Author
 blah
