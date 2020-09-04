@@ -43,6 +43,7 @@ def resume_length_checker(resume_words: int) -> str:
         return 'Too long'
 
 def count_quantifiable_metrics(resume_str: str):
+    # resume_str: str
     """
     Counts the number of quantifiable metrics in the resume.  Based on string matches of
     keywords such as percent, %, $, dollars, USD, etc.
@@ -57,4 +58,16 @@ def count_quantifiable_metrics(resume_str: str):
     int	
     """
     # Add more keywords to the below, will work on cleaning the string better
-    pass
+
+    # resume_str = 'This is a test test test string is $'
+    words = resume_str.split(' ')
+    result = {}    
+    for word in words:                                                                                                                                                                                               
+        result[word] = result.get(word, 0) + 1 
+    keywords = ['%','$','percent','percentage','dollar','dollars','USD','CAD']
+    
+    # To Update: Need to return a dictionary with the counts or a string/list with the total
+    test = {}
+    for k, v in result.items():
+        if k in keywords:
+            print(k, v)
