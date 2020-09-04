@@ -1,4 +1,5 @@
 from typing import Tuple
+from collections import Counter
 
 def get_length_of_resume(resume_str: str) -> Tuple[str, str]:
     """
@@ -55,4 +56,5 @@ def count_quantifiable_metrics(resume_str: str):
     -------
     int	
     """
+    # Add more keywords to the below, will work on cleaning the string better
     pass
