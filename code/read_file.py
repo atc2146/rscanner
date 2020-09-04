@@ -1,4 +1,4 @@
-from tika import parser
+import pdfplumber
 import docx2txt
 import os
 
@@ -42,13 +42,12 @@ def read_pdf_file(path: str) -> str:
     --------
 
     """
-    raw = parser.from_file(path)
-
-    text = (raw['content'])
-
-    return text
+    pdf = pdfplumber.open(path)
+    page = pdf.pages[0]
+    text = page.extract_text()
+    return(text)
+    pdf.close()
     
-
 def read_docx_file(path: str) -> str:
     """
     Reads a docx file and extracts the text.
@@ -99,5 +98,3 @@ def check_file_ext(path: str) -> str:
         print('Please input either a pdf, docx, or txt file')
 
     return(data)
-
-
