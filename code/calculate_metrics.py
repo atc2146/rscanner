@@ -1,5 +1,6 @@
 from typing import Tuple
 from collections import Counter
+import re
 
 def get_length_of_resume(resume_str: str) -> Tuple[str, str]:
     """
@@ -17,7 +18,7 @@ def get_length_of_resume(resume_str: str) -> Tuple[str, str]:
     """
     try:
         # simple split on whitespace
-        num_of_words = resume_str.split(' ')
+        num_of_words = len(resume_str.split())
         return len(resume_str), num_of_words
     except:
         raise TypeError('Not a string')
@@ -36,11 +37,11 @@ def resume_length_checker(resume_words: int) -> str:
     str	
     """
     if (resume_words >= 0 and resume_words <= 325):
-        return 'Too Short'
+        return 'short'
     elif (resume_words > 325 and resume_words <= 650):
-        return 'Ideal'
+        return 'great'
     else:
-        return 'Too long'
+        return 'long'
 
 def count_quantifiable_metrics(resume_str: str):
     # resume_str: str
@@ -57,18 +58,14 @@ def count_quantifiable_metrics(resume_str: str):
     -------
     int	
     """
-    # Add more keywords to the below, will work on cleaning the string better
+    # This can be optimized
 
-    # resume_str = 'This is a test test test string is $ and percent'
+    # resume_str = '''This is a test test test string is $100 and percent 200%'''
     words = resume_str.split(' ')
-    result = {}    
-    for word in words:                                                                                                                                                                                               
-        result[word] = result.get(word, 0) + 1 
-    keywords = ['%','$','percent','percentage','dollar','dollars','USD','CAD']
-    
-    keyword_dict = {}
-    for k, v in result.items():
-        if k in keywords:
-            dict1 = {k:v}
-            keyword_dict.update(dict1)
-    return(keyword_dict)
+    quant_words = []
+    substrings = ['%','$','percent','dollar','CAD','USD']
+    for word in words:
+        for substr in substrings:
+            if substr in word:
+                quant_words.append(word) 
+    return(quant_words) 
