@@ -43,7 +43,7 @@ def resume_length_checker(resume_words: int) -> str:
     else:
         return 'long'
 
-def count_quantifiable_metrics(resume_str: str):
+def count_quantifiable_metrics(resume_str: str) -> str:
     # resume_str: str
     """
     Counts the number of quantifiable metrics in the resume.  Based on string matches of
@@ -56,7 +56,7 @@ def count_quantifiable_metrics(resume_str: str):
         
     Returns
     -------
-    int	
+    str	
     """
     # This can be optimized
 
@@ -69,3 +69,47 @@ def count_quantifiable_metrics(resume_str: str):
             if substr in word:
                 quant_words.append(word) 
     return(quant_words) 
+
+def check_email(resume_str: str) -> Tuple[str, str]:
+    """
+    Checks if string contains valid email address
+
+    Parameters
+    ----------
+    resume_str :  str
+        The resume parsed as string.
+        
+    Returns
+    -------
+    tuple
+    (str, str)	
+    """
+    
+    regex = r'[\w\.-]+@[\w\.-]+\.\w+'    
+    if(re.search(regex,resume_str)):  
+        email = re.findall(regex,resume_str)
+        return("valid",email)  
+          
+    else: 
+        return("invalid","blank")  
+
+
+def check_linkedin(resume_str: str) -> str:
+    """
+    Checks if string contains linkedin url
+
+    Parameters
+    ----------
+    resume_str :  str
+        The resume parsed as string.
+        
+    Returns
+    -------
+    str	
+    """
+    #this can be improved, not very robust
+    search_for = 'linkedin.com'
+    if search_for in resume_str:
+        return('contains')
+    else:
+        return('does not contain')

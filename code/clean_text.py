@@ -18,7 +18,7 @@ def file_prep(resume: str) -> str:
     --------
     
     """
-    cleaned_str = re.sub('[^A-Za-z0-9%$ ]+', '', resume).lower()
+    cleaned_str = re.sub('[^A-Za-z0-9%@.$ ]+', '', resume).lower()
 
     return (cleaned_str)
 
