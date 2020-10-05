@@ -21,7 +21,7 @@ def get_length_of_resume(resume_str: str) -> Tuple[str, str]:
         num_of_words = len(resume_str.split())
         return len(resume_str), num_of_words
     except:
-        raise TypeError('Not a string')
+        raise TypeError('You did not enter a string.')
 
 def resume_length_checker(resume_words: int) -> str:
     """
@@ -30,21 +30,20 @@ def resume_length_checker(resume_words: int) -> str:
     Parameters
     ----------
     resume_words : int
-        The number of words in the resume
+        The number of words in the resume.
         
     Returns
     -------
     str	
     """
     if (resume_words >= 0 and resume_words <= 325):
-        return 'short'
+        return 'on the shorter side'
     elif (resume_words > 325 and resume_words <= 650):
-        return 'great'
+        return 'optimal'
     else:
-        return 'long'
+        return 'on the longer side'
 
 def count_quantifiable_metrics(resume_str: str) -> str:
-    # resume_str: str
     """
     Counts the number of quantifiable metrics in the resume.  Based on string matches of
     keywords such as percent, %, $, dollars, USD, etc.
@@ -64,6 +63,7 @@ def count_quantifiable_metrics(resume_str: str) -> str:
     words = resume_str.split(' ')
     quant_words = []
     substrings = ['%','$','percent','dollar','CAD','USD']
+
     for word in words:
         for substr in substrings:
             if substr in word:
@@ -96,7 +96,7 @@ def check_email(resume_str: str) -> Tuple[str, str]:
 
 def check_linkedin(resume_str: str) -> str:
     """
-    Checks if string contains linkedin url
+    Checks if string contains LinkedIn url.
 
     Parameters
     ----------
@@ -110,6 +110,6 @@ def check_linkedin(resume_str: str) -> str:
     #this can be improved, not very robust
     search_for = 'linkedin.com'
     if search_for in resume_str:
-        return('contains')
+        return 'contains'
     else:
-        return('does not contain')
+        return 'does not contain'
