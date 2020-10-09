@@ -1,20 +1,27 @@
 # Resume Scanner
   
-Side project
+Resume feedback tool inspired by the resume scanner on the cultivated culture website. 
+
+## Input
+
+Reads a .docx, .pdf, or .txt file 
+
+## Output
+
+Checks for:
+* resume length
+* measurable metrics
+* email address
+* linkedin url
+* phone number
+* word frequency
 
 ## Project Structure
 
 There is a folder called 'rough_work' that is in the .gitignore file.  Put all your rough work here (such as your Jupyter notebooks) so it doesn't get uploaded into GitHub.  This folder lives at the same level as the README.
 
-
-## How to run
-
-* open up Powershell
-* go to the code directory, Example: C:\Users\YOURNAME\Documents\rscanner\code
-* type python main.py
-`
 ## Documentation
-* Try to follow the function docstring format as given in the example in code/read_file.py
+* Follows the function docstring format as given in the example in code/read_file.py
 
 ## GitHub Quick Reference
 * Make sure you never develop on master!
@@ -39,4 +46,4 @@ The sample_resume.pdf is taken from below:
 https://docs.google.com/document/d/1-F9cFAubsoEzPzAL8gGKAPbrOj9EQl6yxOPbitoB7RE/edit
 
 ## Author
-blah
+Alex Chung and Alex Kruczkowski
