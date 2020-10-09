@@ -8,7 +8,7 @@ Reads a .docx, .pdf, or .txt file
 
 ## Output
 
-Checks for:
+Checks for and provides feedback on:
 * resume length
 * measurable metrics
 * email address
