@@ -41,6 +41,7 @@ def remove_stop_words(resume_str: str) -> str:
     --------
     
     """
-    filtered_resume = remove_stopwords(resume)
+    cleaned_str = re.sub('[^A-Za-z ]+', '', resume_str).lower()
+    filtered_resume = remove_stopwords(cleaned_str)
 
     return filtered_resume

@@ -107,9 +107,53 @@ def check_linkedin(resume_str: str) -> str:
     -------
     str	
     """
-    #this can be improved, not very robust
     search_for = 'linkedin.com'
     if search_for in resume_str:
         return 'contains'
     else:
         return 'does not contain'
+
+def check_phone_no(resume_str: str) -> str:
+    """
+    Checks if string contains a phone no and returns the first phone no found.
+
+    Parameters
+    ----------
+    resume_str :  str
+        The resume parsed as string.
+        
+    Returns
+    -------
+    str	
+    """
+    phone_no = re.findall('\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4}', resume_str)
+    if phone_no is not None:
+        return(phone_no)
+    else:
+        return('blank')
+   
+def calc_word_freq(resume_str: str):
+    """
+    Checks word frequency and prints words and their frequency if the word appears more than twice.
+
+    Parameters
+    ----------
+    resume_str :  str
+        The resume parsed as string.
+        
+    Returns
+    -------
+    str	
+    """
+    words = resume_str.split()
+    freq  = {}
+    for word in words:
+        if word in freq:
+            freq[word] += 1
+        else:
+            freq[word] = 1
+    
+    for w in sorted(freq, key=freq.get, reverse=True):
+        if freq[w] > 2:
+            print(w, freq[w])
+    

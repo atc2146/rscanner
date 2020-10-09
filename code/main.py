@@ -23,3 +23,11 @@ print(f'Email address is {email[1]} and it is a {email[0]} email.')
 #LinkedIn check
 linkedin = cm.check_linkedin(resume_cleaned)
 print(f'The resume {linkedin} a linked profile address.')
+
+#PhoneNo check
+PhoneNo = cm.check_phone_no(resume_cleaned)
+print(f'Phone number is {PhoneNo}.')
+
+#Most used words
+print('\nYour most used words are:\n')
+cm.calc_word_freq(ct.remove_stop_words(resume_cleaned))
