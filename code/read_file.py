@@ -4,17 +4,15 @@ import os
 
 
 def read_file(path: str, file_extension: str) -> str:
-	"""
+    """
 	Reads a file as a string.
 	
 	Parameters
 	----------
 	path : str
 		The path to the file.
-
 	file_extension : str
 		The file's extension. Includes the period.
-
 	Returns
 	-------
 	str
@@ -33,8 +31,8 @@ def read_file(path: str, file_extension: str) -> str:
     else:
         with open(path) as file:
             data = file.read()
-	
-	return data
+            
+    return data
     
 def check_file_ext(path: str) -> str:
     """
